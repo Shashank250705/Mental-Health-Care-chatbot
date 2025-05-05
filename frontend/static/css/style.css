@@ -1,0 +1,142 @@
+.stApp {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background-attachment: fixed;
+    color: #e6e6e6;
+}
+.stTextInput, .stFileUploader {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(72, 219, 251, 0.3);
+    box-shadow: 0 0 10px rgba(10, 189, 227, 0.2);
+}
+.stButton button {
+    background-color: #00bcd4;
+    color: white;
+    border-radius: 8px;
+    padding: 5px 15px;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+    transition: all 0.3s ease;
+}
+.stButton button:hover {
+    background-color: #00e5ff;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.7);
+    transform: translateY(-2px);
+}
+.stChat {
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+h1 {
+    color: #00e5ff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+    font-weight: 600;
+}
+h3 {
+    color: #00e5ff;
+    text-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
+}
+.user-message {
+    background-color: rgba(72, 219, 251, 0.2);
+    padding: 15px;
+    border-radius: 15px;
+    margin: 10px 0;
+    border-left: 3px solid #48dbfb;
+    box-shadow: 0 0 10px rgba(72, 219, 251, 0.2);
+}
+.assistant-message {
+    background-color: rgba(29, 209, 161, 0.2);
+    padding: 15px;
+    border-radius: 15px;
+    margin: 10px 0;
+    border-left: 3px solid #1dd1a1;
+    box-shadow: 0 0 10px rgba(29, 209, 161, 0.2);
+}
+.disclaimer {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #00e5ff;
+    margin: 20px 0;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+.stChatInputContainer {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 5px;
+    border: 1px solid rgba(72, 219, 251, 0.3);
+}
+.stChatMessage {
+    background-color: transparent !important;
+}
+.stMarkdown a {
+    color: #00e5ff;
+    text-decoration: none;
+}
+.stMarkdown a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 5px rgba(0, 229, 255, 0.5);
+}
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #00bcd4;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #00e5ff;
+}
+/* FAQ Section Styling */
+.faq-section {
+    margin: 10px 0;
+}
+.faq-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 3px solid #00e5ff;
+    transition: all 0.3s ease;
+}
+.faq-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+.faq-item h4 {
+    color: #00e5ff;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.faq-item p {
+    color: #e6e6e6;
+    line-height: 1.6;
+}
+
+/* Expander styling */
+.streamlit-expanderHeader {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(72, 219, 251, 0.3);
+    color: #00e5ff !important;
+    font-weight: 500;
+}
+.streamlit-expanderHeader:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.streamlit-expanderContent {
+    background-color: transparent;
+    border: none;
+}
