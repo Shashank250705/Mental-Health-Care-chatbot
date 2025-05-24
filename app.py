@@ -1,8 +1,10 @@
 import os
-# Set this environment variable before importing any other modules
-os.environ["STREAMLIT_WATCHED_MODULES"] = "none"  # Empty string disables all module watching
-os.environ["STREAMLIT_BROWSER_GATHER_USAGE_STATS"] = "false"  # Disable usage stats gathering
+# Set these environment variables before importing any other modules
+os.environ["STREAMLIT_WATCHED_MODULES"] = "none"  # Disable all module watching
+os.environ["STREAMLIT_BROWSER_GATHER_USAGE_STATS"] = "false"  # Disable usage stats
+os.environ["STREAMLIT_SERVER_ENABLE_STATIC_SERVING"] = "false"  # Disable static serving
 
+# Import streamlit after setting environment variables
 import streamlit as st
 
 # Import frontend components

@@ -3,23 +3,35 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-# Download NLTK resources
-try:
-    nltk.data.find('tokenizers/punkt')
-    nltk.data.find('corpora/stopwords')
-    nltk.data.find('corpora/wordnet')
-except LookupError:
-    nltk.download('punkt')
-    nltk.download('stopwords')
-    nltk.download('wordnet')
+# Download NLTK resources - make this more robust
+def ensure_nltk_resources():
+    """Ensure all required NLTK resources are downloaded"""
+    resources = [
+        'punkt',
+        'stopwords',
+        'wordnet'
+    ]
+    
+    for resource in resources:
+        try:
+            nltk.data.find(f'tokenizers/{resource}')
+        except LookupError:
+            print(f"Downloading {resource}...")
+            nltk.download(resource, quiet=True)
+
+# Call this function at module import time
+ensure_nltk_resources()
 
 def preprocess_text(text):
     """
-    Preprocess the input text by:
-    1. Converting to lowercase
-    2. Removing special characters
-    3. Removing stopwords
-    4. Lemmatizing words
+    Preprocess text by converting to lowercase, removing special characters,
+    removing stopwords, and lemmatizing
+    
+    Args:
+        text (str): The text to preprocess
+        
+    Returns:
+        str: The preprocessed text
     """
     # Convert to lowercase
     text = text.lower()
@@ -28,17 +40,22 @@ def preprocess_text(text):
     text = re.sub(r'[^a-zA-Z\s]', '', text)
     
     # Tokenize
-    tokens = nltk.word_tokenize(text)
+    try:
+        tokens = nltk.word_tokenize(text)
+    except LookupError:
+        # If tokenization fails, try downloading resources again and retry
+        ensure_nltk_resources()
+        tokens = nltk.word_tokenize(text)
     
     # Remove stopwords
     stop_words = set(stopwords.words('english'))
-    tokens = [word for word in tokens if word not in stop_words]
+    tokens = [token for token in tokens if token not in stop_words]
     
     # Lemmatize
     lemmatizer = WordNetLemmatizer()
-    tokens = [lemmatizer.lemmatize(word) for word in tokens]
+    tokens = [lemmatizer.lemmatize(token) for token in tokens]
     
     # Join tokens back into a string
-    processed_text = ' '.join(tokens)
+    preprocessed_text = ' '.join(tokens)
     
-    return processed_text
+    return preprocessed_text
